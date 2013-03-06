@@ -1,24 +1,29 @@
 @import "compass";
 
+$preview_gutter: 15px;
+$preview_width: 395px;
+$preview_height: 180px;
+
 .content {
   @include box-shadow(0 0 6px 2px rgba(0, 0, 0, .2));
 }
 
 .intro {
+  background: #E4BD79;
   background-image: image-url('purty_wood.png');
   padding: 130px 0 100px;
   text-align: center;
 
   h1 {
-    color: white;
-    @include text-shadow(black 0px 2px 8px);
-    font-weight: 100;
+    color: #333;
+    @include text-shadow(white 0px 2px 8px);
+    font-weight: 200;
     font-size: 4em;
   }
 }
 
 .projects {
-  padding: 10px;
+  padding: $preview_gutter;
   background: #333;
   @include background(radial-gradient(#777, #333));
 
@@ -29,16 +34,19 @@
     li {
       position: relative;
       background-image: image-url('small_wood.png');
-      width: 440px;
-      height: 174px;
-      padding: 12px;
+      width: $preview_width + $preview_gutter + $preview_gutter;
+      height: $preview_height + $preview_gutter + $preview_gutter;
+      padding: $preview_gutter;
       display: inline-block;
-      margin: 10px;
+      margin: $preview_gutter;
       float: left;
       border-radius: 2px;
       text-align: center;
 
       img {
+        background: white;
+        width: $preview_width;
+        height: $preview_height;
         border-radius: 2px;
       }
 
@@ -49,18 +57,18 @@
 
     li:hover {
       a {
-        background-color: rgba(0, 0, 0, .5);
+        color: white;
+        font-size: 1.5em;
+        font-weight: 200;
+        @include text-shadow(black 1px 1px 0px);
+        background-color: rgba(0, 0, 0, .8);
         display: inline-block;
         position: absolute;
-        top: 0;
-        left: 0;
-        line-height: 174px;
-        color: white;
-        width: 100%;
-        font-size: 1.5em;
-        text-decoration: none;
-        @include text-shadow(black 1px 1px 0px);
-        font-weight: 100;
+        top: $preview_gutter;
+        left: $preview_gutter;
+        height: $preview_height;
+        line-height: $preview_height;
+        width: $preview_width;
       }
     }
   }
