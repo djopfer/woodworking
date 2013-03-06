@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Opfer::Application.load_tasks
+Woodworking::Application.load_tasks
