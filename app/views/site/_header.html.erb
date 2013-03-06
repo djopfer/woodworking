@@ -1,8 +1,14 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="brand" href="/">daveopfer.com</a>
+      <a class="brand" href="/"><%= Site.first.name %></a>
     </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="intro">
+    <h1><%= Site.first.tagline %></h1>
   </div>
 </div>
 
