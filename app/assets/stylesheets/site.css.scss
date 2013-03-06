@@ -14,6 +14,10 @@ $preview_768_height: 96px;
 $preview_small_width: 260px;
 $preview_small_height: 87px;
 
+body {
+  background-image: image-url('fabric_of_squares_gray.png');
+}
+
 .content {
   @include box-shadow(0 0 6px 2px rgba(0, 0, 0, .2));
 }
@@ -26,6 +30,7 @@ $preview_small_height: 87px;
 
   h1 {
     color: #333;
+    @include text-shadow(#D18026 2px 2px 2px);
     font-size: 90px;
     font-family: "poetica-std", serif;
   }
