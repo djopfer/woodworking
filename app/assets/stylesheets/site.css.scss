@@ -1,8 +1,18 @@
 @import "compass";
 
 $preview_gutter: 15px;
-$preview_width: 395px;
-$preview_height: 180px;
+
+$preview_1200_width: 510px;
+$preview_1200_height: 170px;
+
+$preview_980_width: 395px;
+$preview_980_height: 132px;
+
+$preview_768_width: 287px;
+$preview_768_height: 96px;
+
+$preview_small_width: 260px;
+$preview_small_height: 87px;
 
 .content {
   @include box-shadow(0 0 6px 2px rgba(0, 0, 0, .2));
@@ -11,14 +21,13 @@ $preview_height: 180px;
 .intro {
   background: #E4BD79;
   background-image: image-url('purty_wood.png');
-  padding: 130px 0 100px;
+  padding: 140px 0 100px;
   text-align: center;
 
   h1 {
     color: #333;
-    @include text-shadow(white 0px 2px 8px);
-    font-weight: 200;
-    font-size: 4em;
+    font-size: 90px;
+    font-family: "poetica-std", serif;
   }
 }
 
@@ -34,8 +43,6 @@ $preview_height: 180px;
     li {
       position: relative;
       background-image: image-url('small_wood.png');
-      width: $preview_width + $preview_gutter + $preview_gutter;
-      height: $preview_height + $preview_gutter + $preview_gutter;
       padding: $preview_gutter;
       display: inline-block;
       margin: $preview_gutter;
@@ -45,8 +52,6 @@ $preview_height: 180px;
 
       img {
         background: white;
-        width: $preview_width;
-        height: $preview_height;
         border-radius: 2px;
       }
 
@@ -66,9 +71,6 @@ $preview_height: 180px;
         position: absolute;
         top: $preview_gutter;
         left: $preview_gutter;
-        height: $preview_height;
-        line-height: $preview_height;
-        width: $preview_width;
       }
     }
   }
@@ -78,10 +80,125 @@ footer {
   padding: 8px 0;
 }
 
-//body //@media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
-  //body {
-    //background-image: image-url('straws_@2X.png');
-    //-webkit-background-size: 16px 16px;
-    //background-size: 16px 16px;
-  //}
-//}
+@media (min-width: 1200px) {
+  .projects ul {
+    li {
+      width: $preview_1200_width + $preview_gutter + $preview_gutter;
+      height: $preview_1200_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_1200_width;
+        height: $preview_1200_height;
+      }
+    }
+
+    li:hover a {
+      height: $preview_1200_height;
+      line-height: $preview_1200_height;
+      width: $preview_1200_width;
+    }
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+  .projects ul {
+    li {
+      width: $preview_980_width + $preview_gutter + $preview_gutter;
+      height: $preview_980_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_980_width;
+        height: $preview_980_height;
+      }
+    }
+
+    li:hover a {
+      height: $preview_980_height;
+      line-height: $preview_980_height;
+      width: $preview_980_width;
+    }
+  }
+}
+
+@media (max-width: 979px) {
+  .intro {
+    padding: 60px 0;
+  }
+
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .navbar-fixed-top {
+    .container {
+      width: 728px;
+    }
+  }
+
+  .projects ul {
+    li {
+      width: $preview_768_width + $preview_gutter + $preview_gutter;
+      height: $preview_768_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_768_width;
+        height: $preview_768_height;
+      }
+    }
+
+    li:hover a {
+      height: $preview_768_height;
+      line-height: $preview_768_height;
+      width: $preview_768_width;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-fixed-top {
+    margin: 0;
+  }
+
+  footer {
+    padding-left: 10px;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .intro {
+    padding: 30px 0;
+
+    h1 {
+      font-size: 36px;
+    }
+  }
+
+  .projects ul {
+    li {
+      margin-bottom: $preview_gutter + $preview_gutter;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      float: none;
+      width: $preview_small_width + $preview_gutter + $preview_gutter;
+      height: $preview_small_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_small_width;
+        height: $preview_small_height;
+      }
+    }
+
+    li:hover a {
+      height: $preview_small_height;
+      line-height: $preview_small_height;
+      width: $preview_small_width;
+    }
+  }
+}
+
+
