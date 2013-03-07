@@ -62,20 +62,23 @@ body {
 
       a {
         display: none;
-      }
-    }
-
-    li:hover {
-      a {
+        position: absolute;
+        top: $preview_gutter;
+        left: $preview_gutter;
         color: white;
         font-size: 1.5em;
         font-weight: 200;
         @include text-shadow(black 1px 1px 0px);
-        background-color: rgba(0, 0, 0, .8);
-        display: inline-block;
+      }
+
+      .shade {
+        display: none;
         position: absolute;
         top: $preview_gutter;
         left: $preview_gutter;
+        background-color: black;
+        opacity: .8;
+        filter: alpha(opacity = 80);
       }
     }
   }
@@ -85,82 +88,9 @@ footer {
   padding: 8px 0;
 }
 
-@media (min-width: 1200px) {
-  .projects ul {
-    li {
-      width: $preview_1200_width + $preview_gutter + $preview_gutter;
-      height: $preview_1200_height + $preview_gutter + $preview_gutter;
-
-      img {
-        width: $preview_1200_width;
-        height: $preview_1200_height;
-      }
-    }
-
-    li:hover a {
-      height: $preview_1200_height;
-      line-height: $preview_1200_height;
-      width: $preview_1200_width;
-    }
-  }
-}
-
-@media (min-width: 980px) and (max-width: 1199px) {
-  .projects ul {
-    li {
-      width: $preview_980_width + $preview_gutter + $preview_gutter;
-      height: $preview_980_height + $preview_gutter + $preview_gutter;
-
-      img {
-        width: $preview_980_width;
-        height: $preview_980_height;
-      }
-    }
-
-    li:hover a {
-      height: $preview_980_height;
-      line-height: $preview_980_height;
-      width: $preview_980_width;
-    }
-  }
-}
-
-@media (max-width: 979px) {
-  .intro {
-    padding: 60px 0;
-  }
-
-  .navbar-fixed-top {
-    margin-bottom: 0;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  .navbar-fixed-top {
-    .container {
-      width: 728px;
-    }
-  }
-
-  .projects ul {
-    li {
-      width: $preview_768_width + $preview_gutter + $preview_gutter;
-      height: $preview_768_height + $preview_gutter + $preview_gutter;
-
-      img {
-        width: $preview_768_width;
-        height: $preview_768_height;
-      }
-    }
-
-    li:hover a {
-      height: $preview_768_height;
-      line-height: $preview_768_height;
-      width: $preview_768_width;
-    }
-  }
-}
-
+/*---------------------------------*/
+/* Small screen                    */
+/*---------------------------------*/
 @media (max-width: 767px) {
   .navbar-fixed-top {
     margin: 0;
@@ -196,14 +126,118 @@ footer {
         width: $preview_small_width;
         height: $preview_small_height;
       }
-    }
 
-    li:hover a {
-      height: $preview_small_height;
-      line-height: $preview_small_height;
-      width: $preview_small_width;
+      a {
+        display: block;
+        font-size: 0;
+        height: $preview_small_height;
+        line-height: $preview_small_height;
+        width: $preview_small_width;
+      }
     }
   }
 }
 
+/*-----------------------------------------*/
+/* Everything bigger than the small screen */
+/*-----------------------------------------*/
+@media (min-width: 768px) {
+  .projects li:hover {
+    a {
+      display: inline-block;
+    }
+
+    .shade {
+      display: block;
+    }
+  }
+}
+
+/*-----------------------------------------*/
+/* Everything smaller than large           */
+/*-----------------------------------------*/
+@media (max-width: 979px) {
+  .intro {
+    padding: 60px 0;
+  }
+
+  .navbar-fixed-top {
+    margin-bottom: 0;
+  }
+}
+
+/*-----------------------------------------*/
+/* Medium up to large                      */
+/*-----------------------------------------*/
+@media (min-width: 768px) and (max-width: 979px) {
+  .navbar-fixed-top {
+    .container {
+      width: 728px;
+    }
+  }
+
+  .projects ul {
+    li {
+      width: $preview_768_width + $preview_gutter + $preview_gutter;
+      height: $preview_768_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_768_width;
+        height: $preview_768_height;
+      }
+    }
+
+    li:hover a, li:hover .shade {
+      height: $preview_768_height;
+      line-height: $preview_768_height;
+      width: $preview_768_width;
+    }
+  }
+}
+
+/*-----------------------------------------*/
+/* Large up to XLarge                      */
+/*-----------------------------------------*/
+@media (min-width: 980px) and (max-width: 1199px) {
+  .projects ul {
+    li {
+      width: $preview_980_width + $preview_gutter + $preview_gutter;
+      height: $preview_980_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_980_width;
+        height: $preview_980_height;
+      }
+    }
+
+    li:hover a, li:hover .shade {
+      height: $preview_980_height;
+      line-height: $preview_980_height;
+      width: $preview_980_width;
+    }
+  }
+}
+
+/*-----------------------------------------*/
+/* XLarge                                  */
+/*-----------------------------------------*/
+@media (min-width: 1200px) {
+  .projects ul {
+    li {
+      width: $preview_1200_width + $preview_gutter + $preview_gutter;
+      height: $preview_1200_height + $preview_gutter + $preview_gutter;
+
+      img {
+        width: $preview_1200_width;
+        height: $preview_1200_height;
+      }
+    }
+
+    li:hover a, li:hover .shade {
+      height: $preview_1200_height;
+      line-height: $preview_1200_height;
+      width: $preview_1200_width;
+    }
+  }
+}
 

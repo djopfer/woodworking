@@ -1,7 +1,11 @@
 <div class="projects">
   <ul class="cf">
     <% @projects.each do |p| %>
-      <li><a data-toggle="lightbox" href="#lightbox_<%= p.id %>"><%= p.name %></a><img src="<%= p.preview_image_url %>"></li>
+      <li>
+        <div class="shade"></div>
+        <a data-toggle="lightbox" href="#lightbox_<%= p.id %>"><%= p.name %></a>
+        <img src="<%= p.preview_image_url %>">
+      </li>
     <% end %>
   </ul>
 </div>
