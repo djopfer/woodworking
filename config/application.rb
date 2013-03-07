@@ -66,6 +66,6 @@ module Woodworking
     config.assets.initialize_on_precompile = false
 
     # additional top level assets to precompile
-    config.assets.precompile += %w(modernizr.js)
+    config.assets.precompile += %w(modernizr.js respond.js)
   end
 end
