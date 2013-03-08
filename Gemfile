@@ -3,7 +3,9 @@ source 'http://rubygems.org'
 ruby "1.9.3"
 
 gem 'rails', '3.2.12'
+gem 'activeadmin'
 gem 'jquery-rails'
+gem 'sorcery'
 gem 'thin'
 
 group :assets do
@@ -18,6 +20,7 @@ group :assets do
 end
 
 group :development do
+  gem 'awesome_print'
   gem 'foreman'
 end
 
